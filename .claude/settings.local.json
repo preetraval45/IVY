@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.canva.com)",
+      "Bash(dir:*)",
+      "Bash(pip show:*)",
+      "Bash(where:*)",
+      "Bash(python -c \"from PIL import ImageFont; import os; fonts_dir = ''C:/Windows/Fonts''; targets = [''georgiai.ttf'',''georgiaz.ttf'',''georgia.ttf'',''georgiab.ttf'',''calibri.ttf'',''calibriz.ttf'',''calibrib.ttf'',''pala.ttf'',''palab.ttf'',''palai.ttf'',''segoeui.ttf'',''segoeuib.ttf'',''arial.ttf'',''arialbd.ttf'',''ariali.ttf'',''times.ttf'',''timesbd.ttf'',''timesi.ttf'',''SCRIPTBL.TTF'',''FREESCPT.TTF'',''FRSCRIPT.TTF'',''ITCEDSCR.TTF'',''PALSCRI.TTF'',''MTCORSVA.TTF'',''GOTHIC.TTF'',''GOTHICB.TTF'',''GOTHICBI.TTF'',''GOTHICI.TTF'',''ERASMD.TTF'',''ERASLGHT.TTF'',''ERASDEMI.TTF'',''BRADHITC.TTF'',''PRISTINA.TTF'',''KUNSTLER.TTF'',''VIVALDII.TTF'',''LHANDW.TTF'',''BKANT.TTF'',''BELL.TTF'',''BELLB.TTF'',''BASKVILL.TTF'',''BOOKOS.ttf'',''BOD_R.TTF'',''BOD_B.TTF'',''BOD_I.TTF'',''BOD_BI.TTF'',''GARAMOND.TTF'',''GARA.TTF'',''GARAIT.TTF'',''GARABD.TTF'']; [print\\(f\\) for f in targets if os.path.exists\\(os.path.join\\(fonts_dir, f\\)\\)]\")",
+      "Bash(python generate_poster.py:*)",
+      "Bash(python:*)",
+      "Bash(del \"c:\\\\Users\\\\preet\\\\OneDrive\\\\Documents\\\\GitHub\\\\IVY\\\\test_seguiemj_ttf.png\" \"c:\\\\Users\\\\preet\\\\OneDrive\\\\Documents\\\\GitHub\\\\IVY\\\\test_seguisym_ttf.png\" \"c:\\\\Users\\\\preet\\\\OneDrive\\\\Documents\\\\GitHub\\\\IVY\\\\test_segmdl2_ttf.png\")",
+      "Bash(npm install:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(copy:*)",
+      "Bash(docker ps:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

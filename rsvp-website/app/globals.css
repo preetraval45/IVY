@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --color-blush: #E8A0BF;
+  --color-baby-pink: #F4C2C2;
+  --color-dusty-rose: #C48B9F;
+  --color-deep-pink: #C75B7A;
+  --color-champagne: #F5E6CC;
+  --color-ivory: #FFFFF0;
+  --color-white: #FFFFFF;
+  --color-gold: #BFA06E;
+  --color-gold-light: #D4BE96;
+  --color-rose-gold: #B76E79;
+  --color-sage: #AFC3A5;
+  --color-sage-dark: #91A88A;
+  --color-text-dark: #523040;
+  --color-text-medium: #825569;
+  --color-text-light: #AA8294;
+}
+
+@theme inline {
+  --color-blush: #E8A0BF;
+  --color-babyPink: #F4C2C2;
+  --color-dustyRose: #C48B9F;
+  --color-deepPink: #C75B7A;
+  --color-champagne: #F5E6CC;
+  --color-ivory: #FFFFF0;
+  --color-white: #FFFFFF;
+  --color-gold: #BFA06E;
+  --color-goldLight: #D4BE96;
+  --color-roseGold: #B76E79;
+  --color-sage: #AFC3A5;
+  --color-sageDark: #91A88A;
+  --color-textDark: #523040;
+  --color-textMedium: #825569;
+  --color-textLight: #AA8294;
+  --color-error: #C75B7A;
+  --color-success: #AFC3A5;
+
+  --font-script: var(--font-script);
+  --font-elegant: var(--font-elegant);
+  --font-body: var(--font-body);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFAF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8A0BF;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C75B7A;
+}
+
+/* Selection color */
+::selection {
+  background: #E8A0BF;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floral decorations */
+.floral-divider {
+  position: relative;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.floral-divider::before,
+.floral-divider::after {
+  content: '❀';
+  font-size: 1.5rem;
+  color: #E8A0BF;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.floral-divider::before {
+  left: 0;
+}
+
+.floral-divider::after {
+  right: 0;
+}
