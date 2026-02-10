@@ -14,7 +14,8 @@
       "Bash(copy:*)",
       "Bash(docker ps:*)",
       "Bash(ls:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(vercel link:*)"
     ]
   }
 }
