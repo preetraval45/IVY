@@ -517,7 +517,11 @@ def draw_details_box(d, f_sm, f_bell):
     y += 52
     centered(d, "V E N U E", f_sm, y, C['gold'])
     y += 26
-    centered(d, "— To Be Announced —", f_bell, y, C['text_light'])
+    centered(d, "Club House", f_bell, y, C['text_dark'])
+    y += 24
+    centered(d, "5616 Sage Hills DR", f_bell, y - 4, C['text_med'])
+    y += 20
+    centered(d, "Charlotte, NC 28277", f_bell, y - 8, C['text_med'])
 
 
 def draw_dress_code(d, f_title, f_xs):
@@ -565,7 +569,15 @@ def draw_dress_code(d, f_title, f_xs):
             lw = bb[2] - bb[0]
             d.text((x + sw//2 - lw//2, y + sw + S(6) + j * S(15)), line, font=f_xs, fill=C['text_light'])
 
-    # Add text for "any other pastel color"
+    # Add special notes below swatches
+    note_y = y + sw + S(95)
+
+    # Birthday girl dress note
+    centered(d, "Birthday Girl: Red Wine Color", f_xs, note_y, C['deep_pink'])
+    note_y += S(22)
+
+    # Guest flexibility note
+    centered(d, "Guests: Any pastel color welcome • Your choice!", f_xs, note_y, C['text_light'])
     final_y = sy + ((len(swatches) - 1) // cols_per_row) * row_gap + S(72)
     centered(d, "or any other pastel color", f_xs, final_y, C['text_light'])
 

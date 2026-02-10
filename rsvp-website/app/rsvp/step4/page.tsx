@@ -19,7 +19,6 @@ export default function RSVPStep4() {
     setError('');
 
     try {
-      // Retrieve all form data from sessionStorage
       const formData = {
         guest_name: sessionStorage.getItem('rsvp_name') || '',
         number_of_guests: parseInt(sessionStorage.getItem('rsvp_guests') || '1'),
@@ -29,21 +28,16 @@ export default function RSVPStep4() {
         message: message.trim(),
       };
 
-      // Submit to API
       const response = await fetch('/api/rsvp', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       const result = await response.json();
 
       if (result.success) {
-        // Clear sessionStorage
         sessionStorage.clear();
-        // Redirect to confirmation
         router.push('/confirmation');
       } else {
         setError(result.error || 'Failed to submit RSVP. Please try again.');
@@ -63,62 +57,77 @@ export default function RSVPStep4() {
   }, []);
 
   return (
-    <main className="min-h-screen py-12 px-4 md:px-6 lg:px-8 flex items-center justify-center">
-      <div className="max-w-2xl w-full">
-        <Card variant="gradient" className="shadow-2xl">
-          {/* Progress Indicator */}
+    <main className="min-h-screen py-12 px-4 md:px-6 lg:px-8 flex items-center justify-center bg-gradient-to-br from-[#FFFAF8] via-[#FDEBE8] to-[#FDE2E4] relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-blush/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-babyPink/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+      </div>
+
+      <div className="max-w-2xl w-full relative z-10">
+        <Card variant="gradient" className="shadow-2xl backdrop-blur-sm">
           <div className="mb-8">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-medium text-textDark">Step 4 of 4</span>
-              <span className="text-sm text-textLight">100% Complete</span>
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-sm font-semibold text-textDark">Step 4 of 4</span>
+              <span className="text-sm text-textDark/70 font-medium">100% Complete</span>
             </div>
-            <div className="w-full bg-[#F5E6CC] rounded-full h-2">
-              <div className="bg-gradient-to-r from-blush to-deepPink h-2 rounded-full w-full transition-all duration-300"></div>
+            <div className="w-full bg-champagne rounded-full h-3 shadow-inner">
+              <div className="bg-gradient-to-r from-blush to-deepPink h-3 rounded-full w-full transition-all duration-500 shadow-lg"></div>
             </div>
           </div>
 
-          {/* Question */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-script text-deepPink mb-4 text-center">
+          <div className="flex justify-center mb-6">
+            <div className="flex items-center gap-2">
+              <span className="text-3xl animate-bounce">✿</span>
+              <span className="text-2xl animate-bounce" style={{animationDelay: '0.1s'}}>❀</span>
+              <span className="text-3xl animate-bounce" style={{animationDelay: '0.2s'}}>✿</span>
+            </div>
+          </div>
+
+          <div className="mb-10 text-center">
+            <h1 className="text-5xl md:text-6xl font-script text-transparent bg-clip-text bg-gradient-to-r from-blush via-deepPink to-blush mb-4 leading-tight">
               Almost Done!
             </h1>
-            <p className="text-textLight text-center">
-              Any dietary restrictions or special requests?
+            <p className="text-lg text-textDark/70">
+              Any special requests or dietary needs?
             </p>
           </div>
 
-          {/* Inputs */}
-          <div className="space-y-6 mb-8">
-            <Input
-              type="text"
-              value={dietary}
-              onChange={(e) => setDietary(e.target.value)}
-              placeholder="e.g., Vegetarian, Gluten-free, Allergies (optional)"
-              label="Dietary Restrictions"
-              className="text-lg"
-            />
+          <div className="space-y-6 mb-10">
+            <div className="relative">
+              <div className="absolute left-4 top-6 text-2xl">🥗</div>
+              <Input
+                type="text"
+                value={dietary}
+                onChange={(e) => setDietary(e.target.value)}
+                placeholder="Vegetarian, Gluten-free, Allergies, etc."
+                label="Dietary Restrictions"
+                className="text-lg pl-14"
+              />
+            </div>
 
-            <Input
-              multiline
-              rows={4}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Any special message for Ivy? (optional)"
-              label="Message"
-              className="text-lg"
-            />
+            <div className="relative">
+              <div className="absolute left-4 top-6 text-2xl">💌</div>
+              <Input
+                multiline
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Leave a sweet message for Ivy..."
+                label="Special Message"
+                className="text-lg pl-14"
+              />
+            </div>
           </div>
 
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-lg">
-              <p className="text-red-600 text-center">{error}</p>
+            <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-lg animate-shake">
+              <p className="text-red-600 text-center font-medium">{error}</p>
             </div>
           )}
 
-          {/* Navigation */}
           <div className="flex justify-between items-center gap-4">
             <Link href="/rsvp/step3">
-              <Button variant="outline" size="md" disabled={isSubmitting}>
+              <Button variant="outline" size="md" disabled={isSubmitting} className="hover:scale-105 transition-transform">
                 ← Back
               </Button>
             </Link>
@@ -128,8 +137,9 @@ export default function RSVPStep4() {
               onClick={handleSubmit}
               isLoading={isSubmitting}
               disabled={isSubmitting}
+              className="px-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              Submit RSVP
+              {isSubmitting ? 'Submitting...' : 'Submit RSVP ✨'}
             </Button>
           </div>
         </Card>

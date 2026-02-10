@@ -17,8 +17,8 @@ export const PartyDetails: React.FC = () => {
             <span className="text-3xl text-deepPink">📅</span>
             <div className="text-left flex-1">
               <h3 className="font-semibold text-lg text-textDark mb-1">Date & Time</h3>
-              <p className="text-base">Friday, February 13, 2026</p>
-              <p className="text-base">6:00 PM - 11:00 PM</p>
+              <p className="text-base">Sunday, February 15th, 2026</p>
+              <p className="text-base">2:30 PM - 6:30 PM</p>
             </div>
           </div>
 
@@ -27,9 +27,9 @@ export const PartyDetails: React.FC = () => {
             <span className="text-3xl text-deepPink">📍</span>
             <div className="text-left flex-1">
               <h3 className="font-semibold text-lg text-textDark mb-1">Location</h3>
-              <p className="text-base">Grand Ballroom</p>
-              <p className="text-base">123 Celebration Avenue</p>
-              <p className="text-base">Sweet City, SC 12345</p>
+              <p className="text-base font-semibold">Club House</p>
+              <p className="text-base">5616 Sage Hills DR</p>
+              <p className="text-base">Charlotte, NC 28277</p>
             </div>
           </div>
 
@@ -37,9 +37,21 @@ export const PartyDetails: React.FC = () => {
           <div className="flex items-start gap-4">
             <span className="text-3xl text-deepPink">👗</span>
             <div className="text-left flex-1">
-              <h3 className="font-semibold text-lg text-textDark mb-1">Dress Code</h3>
-              <p className="text-base">Pretty in Pink</p>
-              <p className="text-sm text-textLight">Shades of pink, rose, and blush encouraged!</p>
+              <h3 className="font-semibold text-lg text-textDark mb-2">Dress Code</h3>
+              <div className="space-y-2">
+                <p className="text-base font-semibold text-deepPink">
+                  🍷 Birthday Girl: Red Wine Color
+                </p>
+                <p className="text-base">
+                  💕 Guests: Pretty in Pink theme
+                </p>
+                <p className="text-sm text-textLight">
+                  Blush, Baby Pink, Dusty Rose, Champagne, or any pastel color
+                </p>
+                <p className="text-sm text-textLight italic">
+                  ✨ Your choice! Wear what makes you feel beautiful
+                </p>
+              </div>
             </div>
           </div>
 
@@ -56,7 +68,7 @@ export const PartyDetails: React.FC = () => {
         {/* RSVP Deadline */}
         <div className="mt-8 pt-6 border-t-2 border-blush">
           <p className="text-sm text-textLight">
-            Please RSVP by <span className="font-semibold text-deepPink">February 6, 2026</span>
+            Please RSVP by <span className="font-semibold text-deepPink">February 13, 2026</span>
           </p>
         </div>
       </div>

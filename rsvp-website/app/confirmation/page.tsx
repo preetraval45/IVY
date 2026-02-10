@@ -45,14 +45,19 @@ export default function ConfirmationPage() {
 
           {/* Event Reminder */}
           <div className="border-t-2 border-blush pt-6 mb-8">
-            <p className="font-elegant text-xl text-textDark mb-2">
+            <p className="font-elegant text-xl text-textDark mb-3">
               Save the Date
             </p>
-            <p className="text-textMedium text-lg mb-1">
-              February 13, 2026
+            <p className="text-textMedium text-lg mb-1 font-semibold">
+              Sunday, February 15, 2026
             </p>
-            <p className="text-textMedium">
-              6:00 PM - 11:00 PM
+            <p className="text-textMedium mb-3">
+              2:30 PM - 6:30 PM
+            </p>
+            <p className="text-textMedium text-sm">
+              📍 Club House<br/>
+              5616 Sage Hills DR<br/>
+              Charlotte, NC 28277
             </p>
           </div>
 
@@ -63,15 +68,19 @@ export default function ConfirmationPage() {
             </h3>
             <ul className="text-left text-textMedium space-y-2 text-sm md:text-base">
               <li className="flex items-start gap-2">
-                <span className="text-deepPink">•</span>
-                <span>Dress code: Pretty in Pink (shades of pink, rose, and blush)</span>
+                <span className="text-deepPink">🍷</span>
+                <span><strong>Birthday Girl:</strong> Red Wine Color</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-deepPink">•</span>
-                <span>Location: Grand Ballroom, 123 Celebration Avenue</span>
+                <span className="text-deepPink">💕</span>
+                <span><strong>Guests:</strong> Pretty in Pink theme - any pastel color welcome!</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-deepPink">•</span>
+                <span className="text-deepPink">✨</span>
+                <span>Wear what makes you feel beautiful - it's your choice!</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-deepPink">🎉</span>
                 <span>Expect dinner, dancing, photo booth, and sweet surprises!</span>
               </li>
             </ul>
