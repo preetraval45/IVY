@@ -500,7 +500,7 @@ def draw_top_florals(d):
 def draw_details_box(d, f_sm, f_bell):
     """Date, time, venue details"""
     bx1, bx2 = S(130), WIDTH - S(130)
-    by1, by2 = S(655), S(900)
+    by1, by2 = S(655), S(930)  # Increased height for venue
     # Subtle fill
     d.rectangle([bx1, by1, bx2, by2], fill=(255, 248, 245), outline=C['border_gold'], width=max(1, SCALE))
 
@@ -509,19 +509,19 @@ def draw_details_box(d, f_sm, f_bell):
     y += 26
     centered(d, "Sunday, February 15th, 2026", f_bell, y, C['text_dark'])
 
-    y += 52
+    y += 50
     centered(d, "T I M E", f_sm, y, C['gold'])
     y += 26
     centered(d, "2 : 30  PM   —   6 : 30  PM", f_bell, y, C['text_dark'])
 
-    y += 52
+    y += 50
     centered(d, "V E N U E", f_sm, y, C['gold'])
-    y += 26
+    y += 28
     centered(d, "Club House", f_bell, y, C['text_dark'])
-    y += 24
-    centered(d, "5616 Sage Hills DR", f_bell, y - 4, C['text_med'])
-    y += 20
-    centered(d, "Charlotte, NC 28277", f_bell, y - 8, C['text_med'])
+    y += 28
+    centered(d, "5616 Sage Hills DR", f_bell, y, C['text_dark'])
+    y += 28
+    centered(d, "Charlotte, NC 28277", f_bell, y, C['text_dark'])
 
 
 def draw_dress_code(d, f_title, f_xs):
