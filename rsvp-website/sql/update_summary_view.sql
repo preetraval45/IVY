@@ -1,11 +1,6 @@
--- Migration: Remove dietary_restrictions column
--- Run this on existing databases that have the dietary_restrictions column
+-- Update RSVP summary view to match admin page expectations
+-- Run this to update the view in your Neon database
 
--- Drop the column if it exists
-ALTER TABLE rsvps
-DROP COLUMN IF EXISTS dietary_restrictions;
-
--- Update the view to remove dietary_restrictions reference
 DROP VIEW IF EXISTS rsvp_summary;
 
 CREATE OR REPLACE VIEW rsvp_summary AS

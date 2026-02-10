@@ -55,8 +55,8 @@ CREATE OR REPLACE VIEW rsvp_summary AS
 SELECT
     COUNT(*) as total_rsvps,
     SUM(number_of_guests) as total_guests,
-    COUNT(CASE WHEN email IS NOT NULL THEN 1 END) as guests_with_email,
-    COUNT(CASE WHEN phone IS NOT NULL THEN 1 END) as guests_with_phone
+    0 as with_dietary_restrictions,
+    COUNT(CASE WHEN message IS NOT NULL AND message != '' THEN 1 END) as with_messages
 FROM rsvps;
 
 -- Insert sample data for testing (remove in production)
