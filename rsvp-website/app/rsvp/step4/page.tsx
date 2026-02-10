@@ -3,9 +3,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Card } from '@/components/ui/Card';
-import { Input } from '@/components/ui/Input';
-import { Button } from '@/components/ui/Button';
 
 export default function RSVPStep4() {
   const router = useRouter();
@@ -57,93 +54,132 @@ export default function RSVPStep4() {
   }, []);
 
   return (
-    <main className="min-h-screen py-12 px-4 md:px-6 lg:px-8 flex items-center justify-center bg-gradient-to-br from-[#FFFAF8] via-[#FDEBE8] to-[#FDE2E4] relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-blush/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-babyPink/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF5F7] via-[#FFE8EC] to-[#FFD6E0] flex items-center justify-center p-4">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blush rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-babyPink rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="max-w-2xl w-full relative z-10">
-        <Card variant="gradient" className="shadow-2xl backdrop-blur-sm">
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-3">
-              <span className="text-sm font-semibold text-textDark">Step 4 of 4</span>
-              <span className="text-sm text-textDark/70 font-medium">100% Complete</span>
-            </div>
-            <div className="w-full bg-champagne rounded-full h-3 shadow-inner">
-              <div className="bg-gradient-to-r from-blush to-deepPink h-3 rounded-full w-full transition-all duration-500 shadow-lg"></div>
-            </div>
+      <div className="w-full max-w-2xl relative z-10">
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm font-semibold text-textDark">Step 4 of 4</span>
+            <span className="text-sm font-medium text-deepPink">100%</span>
           </div>
-
-          <div className="flex justify-center mb-6">
-            <div className="flex items-center gap-2">
-              <span className="text-3xl animate-bounce">✿</span>
-              <span className="text-2xl animate-bounce" style={{animationDelay: '0.1s'}}>❀</span>
-              <span className="text-3xl animate-bounce" style={{animationDelay: '0.2s'}}>✿</span>
-            </div>
+          <div className="h-3 bg-white/50 rounded-full overflow-hidden shadow-inner">
+            <div className="h-full w-full bg-gradient-to-r from-blush to-deepPink rounded-full transition-all duration-500 shadow-lg"></div>
           </div>
+        </div>
 
-          <div className="mb-10 text-center">
-            <h1 className="text-5xl md:text-6xl font-script text-transparent bg-clip-text bg-gradient-to-r from-blush via-deepPink to-blush mb-4 leading-tight">
+        <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 md:p-12 border border-white/50">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center gap-2 mb-6">
+              <span className="text-4xl animate-bounce">🎉</span>
+              <span className="text-3xl animate-bounce" style={{animationDelay: '0.1s'}}>💕</span>
+              <span className="text-4xl animate-bounce" style={{animationDelay: '0.2s'}}>✨</span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-script text-transparent bg-clip-text bg-gradient-to-r from-blush via-deepPink to-blush mb-4 leading-tight">
               Almost Done!
             </h1>
-            <p className="text-lg text-textDark/70">
-              Any special requests or dietary needs?
+            <p className="text-lg text-textMedium">
+              Any special requests or dietary needs? 🍽️
             </p>
           </div>
 
           <div className="space-y-6 mb-10">
             <div className="relative">
-              <div className="absolute left-4 top-6 text-2xl">🥗</div>
-              <Input
-                type="text"
-                value={dietary}
-                onChange={(e) => setDietary(e.target.value)}
-                placeholder="Vegetarian, Gluten-free, Allergies, etc."
-                label="Dietary Restrictions"
-                className="text-lg pl-14"
-              />
+              <label className="block text-sm font-semibold text-textDark mb-2">
+                Dietary Restrictions
+              </label>
+              <div className="relative">
+                <span className="absolute left-4 top-5 text-2xl">🥗</span>
+                <input
+                  type="text"
+                  value={dietary}
+                  onChange={(e) => setDietary(e.target.value)}
+                  placeholder="Vegetarian, Gluten-free, Allergies, etc."
+                  className="w-full pl-14 pr-4 py-4 text-lg rounded-2xl border-2 border-babyPink focus:border-deepPink bg-white/50 focus:bg-white outline-none transition-all duration-300"
+                />
+              </div>
             </div>
 
             <div className="relative">
-              <div className="absolute left-4 top-6 text-2xl">💌</div>
-              <Input
-                multiline
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Leave a sweet message for Ivy..."
-                label="Special Message"
-                className="text-lg pl-14"
-              />
+              <label className="block text-sm font-semibold text-textDark mb-2">
+                Special Message for Ivy
+              </label>
+              <div className="relative">
+                <span className="absolute left-4 top-5 text-2xl">💌</span>
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Leave a sweet birthday message..."
+                  rows={4}
+                  className="w-full pl-14 pr-4 py-4 text-lg rounded-2xl border-2 border-babyPink focus:border-deepPink bg-white/50 focus:bg-white outline-none transition-all duration-300 resize-none"
+                />
+              </div>
             </div>
           </div>
 
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-lg animate-shake">
+            <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-2xl animate-shake">
               <p className="text-red-600 text-center font-medium">{error}</p>
             </div>
           )}
 
-          <div className="flex justify-between items-center gap-4">
-            <Link href="/rsvp/step3">
-              <Button variant="outline" size="md" disabled={isSubmitting} className="hover:scale-105 transition-transform">
+          <div className="flex items-center justify-between gap-4">
+            <Link href="/rsvp/step3" className="flex-1">
+              <button
+                disabled={isSubmitting}
+                className="w-full px-6 py-4 text-textDark font-semibold rounded-2xl border-2 border-dustyRose/30 hover:border-dustyRose bg-white hover:bg-dustyRose/5 transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
+              >
                 ← Back
-              </Button>
+              </button>
             </Link>
-            <Button
-              variant="primary"
-              size="lg"
+
+            <button
               onClick={handleSubmit}
-              isLoading={isSubmitting}
               disabled={isSubmitting}
-              className="px-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              className={`flex-1 px-6 py-4 font-bold rounded-2xl text-lg transition-all duration-300 transform
+                ${isSubmitting
+                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-blush via-deepPink to-blush text-white shadow-xl hover:shadow-2xl hover:scale-105 hover:-translate-y-0.5'
+                }`}
             >
-              {isSubmitting ? 'Submitting...' : 'Submit RSVP ✨'}
-            </Button>
+              {isSubmitting ? (
+                <span className="flex items-center justify-center gap-2">
+                  <span className="animate-spin">⏳</span>
+                  Submitting...
+                </span>
+              ) : (
+                'Submit RSVP 🎊'
+              )}
+            </button>
           </div>
-        </Card>
+        </div>
       </div>
-    </main>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+          20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .animate-shake {
+          animation: shake 0.5s;
+        }
+      `}</style>
+    </div>
   );
 }

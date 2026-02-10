@@ -3,9 +3,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Card } from '@/components/ui/Card';
-import { Input } from '@/components/ui/Input';
-import { Button } from '@/components/ui/Button';
 
 export default function RSVPStep3() {
   const router = useRouter();
@@ -26,84 +23,113 @@ export default function RSVPStep3() {
   }, []);
 
   return (
-    <main className="min-h-screen py-12 px-4 md:px-6 lg:px-8 flex items-center justify-center bg-gradient-to-br from-[#FFFAF8] via-[#FDEBE8] to-[#FDE2E4] relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-32 h-32 bg-blush/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-40 h-40 bg-babyPink/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF5F7] via-[#FFE8EC] to-[#FFD6E0] flex items-center justify-center p-4">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blush rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-babyPink rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="max-w-2xl w-full relative z-10">
-        <Card variant="gradient" className="shadow-2xl backdrop-blur-sm">
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-3">
-              <span className="text-sm font-semibold text-textDark">Step 3 of 4</span>
-              <span className="text-sm text-textDark/70 font-medium">75% Complete</span>
-            </div>
-            <div className="w-full bg-champagne rounded-full h-3 shadow-inner">
-              <div className="bg-gradient-to-r from-blush to-deepPink h-3 rounded-full w-3/4 transition-all duration-500 shadow-lg"></div>
-            </div>
+      <div className="w-full max-w-2xl relative z-10">
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm font-semibold text-textDark">Step 3 of 4</span>
+            <span className="text-sm font-medium text-deepPink">75%</span>
           </div>
-
-          <div className="flex justify-center mb-6">
-            <div className="flex items-center gap-2">
-              <span className="text-3xl animate-bounce">✿</span>
-              <span className="text-2xl animate-bounce" style={{animationDelay: '0.1s'}}>❀</span>
-              <span className="text-3xl animate-bounce" style={{animationDelay: '0.2s'}}>✿</span>
-            </div>
+          <div className="h-3 bg-white/50 rounded-full overflow-hidden shadow-inner">
+            <div className="h-full w-3/4 bg-gradient-to-r from-blush to-deepPink rounded-full transition-all duration-500 shadow-lg"></div>
           </div>
+        </div>
 
-          <div className="mb-10 text-center">
-            <h1 className="text-5xl md:text-6xl font-script text-transparent bg-clip-text bg-gradient-to-r from-blush via-deepPink to-blush mb-4 leading-tight">
-              Contact Info
+        <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 md:p-12 border border-white/50">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center gap-2 mb-6">
+              <span className="text-4xl animate-bounce">📧</span>
+              <span className="text-3xl animate-bounce" style={{animationDelay: '0.1s'}}>💕</span>
+              <span className="text-4xl animate-bounce" style={{animationDelay: '0.2s'}}>📱</span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-script text-transparent bg-clip-text bg-gradient-to-r from-blush via-deepPink to-blush mb-4 leading-tight">
+              Stay Connected
             </h1>
-            <p className="text-lg text-textDark/70">
-              Optional • For event updates and reminders
+            <p className="text-lg text-textMedium">
+              Optional - For event updates and reminders ✨
             </p>
           </div>
 
           <div className="space-y-6 mb-10">
             <div className="relative">
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl">📧</div>
-              <Input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your.email@example.com"
-                label="Email Address"
-                className="text-lg pl-14"
-              />
+              <label className="block text-sm font-semibold text-textDark mb-2">
+                Email Address
+              </label>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl">📧</span>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your.email@example.com"
+                  className="w-full pl-14 pr-4 py-4 text-lg rounded-2xl border-2 border-babyPink focus:border-deepPink bg-white/50 focus:bg-white outline-none transition-all duration-300"
+                />
+              </div>
             </div>
 
             <div className="relative">
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl">📱</div>
-              <Input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="(555) 123-4567"
-                label="Phone Number"
-                className="text-lg pl-14"
-              />
+              <label className="block text-sm font-semibold text-textDark mb-2">
+                Phone Number
+              </label>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl">📱</span>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="(555) 123-4567"
+                  className="w-full pl-14 pr-4 py-4 text-lg rounded-2xl border-2 border-babyPink focus:border-deepPink bg-white/50 focus:bg-white outline-none transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            <div className="bg-blush/10 rounded-2xl p-4 text-center">
+              <p className="text-sm text-textMedium">
+                💡 We'll only use this to send event updates and reminders
+              </p>
             </div>
           </div>
 
-          <div className="flex justify-between items-center gap-4">
-            <Link href="/rsvp/step2">
-              <Button variant="outline" size="md" className="hover:scale-105 transition-transform">
+          <div className="flex items-center justify-between gap-4">
+            <Link href="/rsvp/step2" className="flex-1">
+              <button className="w-full px-6 py-4 text-textDark font-semibold rounded-2xl border-2 border-dustyRose/30 hover:border-dustyRose bg-white hover:bg-dustyRose/5 transition-all duration-300 transform hover:scale-105">
                 ← Back
-              </Button>
+              </button>
             </Link>
-            <Button
-              variant="primary"
-              size="lg"
+
+            <button
               onClick={handleNext}
-              className="px-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              className="flex-1 px-6 py-4 bg-gradient-to-r from-blush via-deepPink to-blush text-white font-bold rounded-2xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
             >
               Continue →
-            </Button>
+            </button>
           </div>
-        </Card>
+        </div>
+
+        <p className="text-center text-sm text-textMedium mt-6">
+          Skip this step if you prefer - it's completely optional! ⏭️
+        </p>
       </div>
-    </main>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+      `}</style>
+    </div>
   );
 }

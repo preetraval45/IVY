@@ -1,100 +1,191 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-[#FFFAF8] via-[#FDEBE8] to-[#FDE2E4] relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-[#E8A0BF]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#F4C2C2]/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-[#C75B7A]/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF5F7] via-[#FFE8EC] to-[#FFD6E0]">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#E8A0BF] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#F4C2C2] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-[#C75B7A] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="max-w-6xl w-full mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Poster */}
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#E8A0BF] via-[#F4C2C2] to-[#C75B7A] rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500"></div>
-            <div className="relative aspect-[2/3] w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white/80 group-hover:border-white transition-all duration-300 group-hover:shadow-[0_20px_60px_rgba(232,160,191,0.4)]">
-              <Image
-                src="/poster.png"
-                alt="Ivy's Sweet 16 Birthday Party"
-                fill
-                className="object-contain bg-white"
-                priority
-                unoptimized
-              />
-            </div>
-          </div>
-
-          {/* Right Side - Content */}
-          <div className="text-center md:text-left space-y-8">
-            {/* Decorative Top */}
-            <div className="flex items-center justify-center md:justify-start gap-3">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#E8A0BF]"></div>
-              <span className="text-[#C75B7A] text-sm font-medium tracking-wider uppercase">Sweet Sixteen</span>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#E8A0BF]"></div>
-            </div>
-
-            {/* Main Heading */}
-            <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-script text-transparent bg-clip-text bg-gradient-to-r from-[#E8A0BF] via-[#C75B7A] to-[#E8A0BF] leading-tight">
-                You're Invited!
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section className="container mx-auto px-4 py-16 md:py-24">
+          <div className="max-w-7xl mx-auto">
+            {/* Centered Title */}
+            <div className="text-center mb-12">
+              <div className="inline-block mb-4">
+                <span className="px-6 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold text-[#C75B7A] shadow-lg">
+                  You're Invited to a Special Celebration 💕
+                </span>
+              </div>
+              <h1 className="text-6xl md:text-8xl font-script text-transparent bg-clip-text bg-gradient-to-r from-[#E8A0BF] via-[#C75B7A] to-[#E8A0BF] mb-6 animate-fade-in leading-tight">
+                Ivy's Sweet 16
               </h1>
-              <div className="h-1 w-24 bg-gradient-to-r from-[#E8A0BF] to-[#C75B7A] rounded-full mx-auto md:mx-0"></div>
-            </div>
-
-            {/* Description */}
-            <div className="space-y-3">
-              <p className="text-xl md:text-2xl text-[#523040] font-elegant">
-                Join us for an unforgettable
+              <p className="text-2xl md:text-3xl text-[#8B5A6B] font-elegant mb-4">
+                A Pretty in Pink Celebration
               </p>
-              <p className="text-2xl md:text-3xl font-script text-[#C75B7A]">
-                Pretty in Pink Celebration
-              </p>
-            </div>
-
-            {/* Event Highlights */}
-            <div className="space-y-3 text-[#523040]/80">
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <span className="text-2xl">🎂</span>
-                <span className="text-lg">Sunday, February 15th, 2026</span>
-              </div>
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <span className="text-2xl">🕐</span>
-                <span className="text-lg">2:30 PM - 6:30 PM</span>
-              </div>
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <span className="text-2xl">✨</span>
-                <span className="text-lg">An afternoon of elegance & fun</span>
+              <div className="flex items-center justify-center gap-4 text-lg text-[#8B5A6B]">
+                <span className="flex items-center gap-2">
+                  <span className="text-2xl">📅</span>
+                  Sunday, February 15, 2026
+                </span>
+                <span className="hidden md:inline">•</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-2xl">🕐</span>
+                  2:30 - 6:30 PM
+                </span>
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-6">
-              <Link href="/details">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="text-lg px-10 py-4 shadow-2xl hover:shadow-[0_15px_40px_rgba(232,160,191,0.5)] transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  View Details & RSVP →
-                </Button>
-              </Link>
-            </div>
+            {/* Two Column Layout */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Poster Card */}
+              <div className="order-2 lg:order-1">
+                <div className="group relative">
+                  {/* Glow Effect */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-[#E8A0BF] via-[#F4C2C2] to-[#C75B7A] rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
 
-            {/* Bottom Decoration */}
-            <div className="flex items-center gap-4 justify-center md:justify-start pt-4 opacity-60">
-              <span className="text-3xl text-[#E8A0BF] animate-bounce" style={{animationDelay: '0s'}}>✿</span>
-              <span className="text-2xl text-[#F4C2C2] animate-bounce" style={{animationDelay: '0.2s'}}>❀</span>
-              <span className="text-3xl text-[#C75B7A] animate-bounce" style={{animationDelay: '0.4s'}}>✿</span>
+                  {/* Poster Container */}
+                  <div className="relative bg-white rounded-3xl p-3 shadow-2xl transform transition-all duration-500 hover:scale-[1.02]">
+                    <div className="relative aspect-[2/3] rounded-2xl overflow-hidden">
+                      <Image
+                        src="/poster.png"
+                        alt="Ivy's Sweet 16 Party Poster"
+                        fill
+                        className="object-contain"
+                        priority
+                        unoptimized
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Event Details Card */}
+              <div className="order-1 lg:order-2 space-y-6">
+                {/* Location Card */}
+                <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="bg-gradient-to-br from-[#E8A0BF] to-[#C75B7A] p-4 rounded-2xl shadow-lg">
+                      <span className="text-3xl">📍</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#523040] mb-2">Venue</h3>
+                      <p className="text-lg font-semibold text-[#C75B7A]">Club House</p>
+                      <p className="text-[#8B5A6B]">5616 Sage Hills DR</p>
+                      <p className="text-[#8B5A6B]">Charlotte, NC 28277</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dress Code Card */}
+                <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="bg-gradient-to-br from-[#E8A0BF] to-[#C75B7A] p-4 rounded-2xl shadow-lg">
+                      <span className="text-3xl">👗</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#523040] mb-3">Dress Code</h3>
+                      <div className="space-y-2">
+                        <p className="text-base">
+                          <span className="font-semibold text-[#8B1538]">Birthday Girl:</span> Red Wine Color 🍷
+                        </p>
+                        <p className="text-base">
+                          <span className="font-semibold text-[#C75B7A]">Guests:</span> Pretty in Pink or any pastel color
+                        </p>
+                        <p className="text-sm text-[#8B5A6B] italic">
+                          Wear what makes you feel beautiful! ✨
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* What to Expect */}
+                <div className="bg-gradient-to-br from-[#E8A0BF] to-[#C75B7A] rounded-3xl p-8 shadow-xl text-white">
+                  <h3 className="text-xl font-bold mb-4">What to Expect</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">🍽️</span>
+                      <span className="text-sm font-medium">Dinner</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">💃</span>
+                      <span className="text-sm font-medium">Dancing</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">📸</span>
+                      <span className="text-sm font-medium">Photo Booth</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">🎉</span>
+                      <span className="text-sm font-medium">Surprises</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <Link href="/rsvp/step1" className="block">
+                  <button className="w-full bg-gradient-to-r from-[#E8A0BF] via-[#C75B7A] to-[#E8A0BF] text-white font-bold py-6 px-8 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 hover:scale-[1.02]">
+                    RSVP Now - Save My Spot! 🎊
+                  </button>
+                </Link>
+
+                {/* Deadline Notice */}
+                <p className="text-center text-sm text-[#8B5A6B]">
+                  Please RSVP by <span className="font-bold text-[#C75B7A]">February 13, 2026</span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </main>
+        </section>
+
+        {/* Footer */}
+        <footer className="container mx-auto px-4 py-12 text-center border-t border-[#E8A0BF]/30">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-[#8B5A6B] mb-2">
+              Questions? Contact us at{' '}
+              <a href="mailto:party@ivysweet16.com" className="text-[#C75B7A] hover:underline font-semibold">
+                party@ivysweet16.com
+              </a>
+            </p>
+            <p className="text-sm text-[#8B5A6B]/70">
+              We can't wait to celebrate with you! 💕
+            </p>
+          </div>
+        </footer>
+      </main>
+
+      {/* CSS for animations */}
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          25% { transform: translate(20px, -50px) scale(1.1); }
+          50% { transform: translate(-20px, 20px) scale(0.9); }
+          75% { transform: translate(50px, 50px) scale(1.05); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+      `}</style>
+    </div>
   );
 }
