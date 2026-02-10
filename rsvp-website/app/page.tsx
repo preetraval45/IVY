@@ -39,11 +39,11 @@ export default function HomePage() {
 
         {/* Main Content: Poster LEFT, Details RIGHT */}
         <div className="max-w-7xl mx-auto mb-16">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-            {/* LEFT: Poster */}
+            {/* LEFT: Poster with more padding */}
             <div className="fade-in order-2 lg:order-1">
-              <div className="elegant-card p-6 sm:p-8 soft-shadow sticky top-8">
+              <div className="elegant-card p-8 sm:p-10 lg:p-12 soft-shadow sticky top-8">
                 <div className="relative aspect-[2/3] rounded-2xl overflow-hidden">
                   <Image
                     src="/poster.png"
@@ -57,13 +57,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* RIGHT: Event Details & RSVP */}
-            <div className="space-y-6 fade-in-up order-1 lg:order-2">
+            {/* RIGHT: Event Details & RSVP with more spacing */}
+            <div className="space-y-8 fade-in-up order-1 lg:order-2">
 
               {/* Venue */}
-              <div className="elegant-card hover:scale-[1.02] transition-transform duration-300 p-6">
+              <div className="elegant-card hover:scale-[1.02] transition-transform duration-300 p-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 flex-shrink-0 bg-gradient-to-br from-softRose to-dustyRose rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 shrink-0 bg-gradient-to-br from-softRose to-dustyRose rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-3xl">📍</span>
                   </div>
                   <div className="flex-1">
@@ -76,15 +76,15 @@ export default function HomePage() {
               </div>
 
               {/* Dress Code */}
-              <div className="elegant-card hover:scale-[1.02] transition-transform duration-300 p-6">
+              <div className="elegant-card hover:scale-[1.02] transition-transform duration-300 p-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 flex-shrink-0 bg-gradient-to-br from-softRose to-dustyRose rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 shrink-0 bg-gradient-to-br from-softRose to-dustyRose rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-3xl">👗</span>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-elegant text-textPrimary mb-4">Dress Code</h3>
 
-                    <div className="space-y-3 mb-4">
+                    <div className="space-y-4 mb-4">
                       <div className="bg-dustyRose/10 rounded-xl p-4 border border-dustyRose/20">
                         <p className="font-semibold text-textPrimary text-base mb-1">Birthday Girl</p>
                         <p className="text-textSecondary flex items-center gap-2">
@@ -112,9 +112,9 @@ export default function HomePage() {
               </div>
 
               {/* What to Expect */}
-              <div className="elegant-card hover:scale-[1.02] transition-transform duration-300 p-6 bg-gradient-to-br from-softRose/10 to-dustyRose/10">
+              <div className="elegant-card hover:scale-[1.02] transition-transform duration-300 p-8 bg-gradient-to-br from-softRose/10 to-dustyRose/10">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 flex-shrink-0 bg-white rounded-full flex items-center justify-center shadow-md">
+                  <div className="w-16 h-16 shrink-0 bg-white rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-3xl">🎉</span>
                   </div>
                   <div className="flex-1">
@@ -142,14 +142,14 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* RSVP Button */}
-              <div className="pt-4">
+              {/* RSVP Button with more spacing */}
+              <div className="pt-6">
                 <Link href="/rsvp/step1" className="block">
-                  <button className="elegant-button text-xl px-8 py-5 font-elegant w-full text-center shadow-2xl hover:shadow-3xl">
-                    RSVP Now - Save My Spot 🎊
+                  <button className="elegant-button text-xl px-10 py-6 font-elegant w-full text-center shadow-2xl hover:shadow-3xl">
+                    RSVP Now - Save My Spot! 🎊
                   </button>
                 </Link>
-                <p className="text-center text-textSecondary mt-4 text-base">
+                <p className="text-center text-textSecondary mt-5 text-base">
                   Please RSVP by <span className="font-bold text-softRose text-lg">February 13, 2026</span>
                 </p>
               </div>
