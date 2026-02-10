@@ -7,10 +7,10 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div className="min-h-screen poster-bg">
-      <main className="container mx-auto px-6 sm:px-8 lg:px-12 py-10 sm:py-16">
+      <main className="container mx-auto px-8 sm:px-12 lg:px-16 py-12 sm:py-20">
 
         {/* Elegant Header */}
-        <header className="text-center mb-16 fade-in-up">
+        <header className="text-center mb-20 fade-in-up">
           <div className="inline-block px-8 py-3 mb-8 bg-softRose/10 rounded-full border border-softRose/20">
             <p className="text-sm font-elegant text-textSecondary tracking-wider">You're Invited to Celebrate</p>
           </div>
@@ -35,15 +35,15 @@ export default function HomePage() {
           </div>
         </header>
 
-        <div className="elegant-divider my-12"></div>
+        <div className="elegant-divider my-16"></div>
 
         {/* Main Content: Poster LEFT, Details RIGHT with better spacing */}
-        <div className="max-w-7xl mx-auto mb-16 px-4">
-          <div className="grid lg:grid-cols-[45%_55%] gap-10 lg:gap-16 xl:gap-20 items-start">
+        <div className="max-w-7xl mx-auto mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
             {/* LEFT: Poster */}
-            <div className="fade-in order-2 lg:order-1">
-              <div className="elegant-card p-8 sm:p-10 lg:p-12 soft-shadow sticky top-8">
+            <div className="fade-in order-2 lg:order-1 mb-12 lg:mb-0">
+              <div className="elegant-card p-8 soft-shadow sticky top-8">
                 <div className="relative aspect-[2/3] rounded-2xl overflow-hidden shadow-inner">
                   <Image
                     src="/poster.png"
@@ -58,10 +58,10 @@ export default function HomePage() {
             </div>
 
             {/* RIGHT: Event Details & RSVP */}
-            <div className="space-y-8 fade-in-up order-1 lg:order-2">
+            <div className="space-y-6 fade-in-up order-1 lg:order-2">
 
               {/* Venue */}
-              <div className="elegant-card hover:scale-[1.01] transition-transform duration-300 p-7">
+              <div className="elegant-card hover:scale-[1.01] transition-transform duration-300 p-6 mb-6">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 shrink-0 bg-gradient-to-br from-softRose to-dustyRose rounded-full flex items-center justify-center shadow-md">
                     <span className="text-2xl">📍</span>
@@ -76,7 +76,7 @@ export default function HomePage() {
               </div>
 
               {/* Dress Code */}
-              <div className="elegant-card hover:scale-[1.01] transition-transform duration-300 p-7">
+              <div className="elegant-card hover:scale-[1.01] transition-transform duration-300 p-6 mb-6">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 shrink-0 bg-gradient-to-br from-softRose to-dustyRose rounded-full flex items-center justify-center shadow-md">
                     <span className="text-2xl">👗</span>
@@ -112,7 +112,7 @@ export default function HomePage() {
               </div>
 
               {/* What to Expect */}
-              <div className="elegant-card hover:scale-[1.01] transition-transform duration-300 p-7 bg-gradient-to-br from-softRose/5 to-dustyRose/5">
+              <div className="elegant-card hover:scale-[1.01] transition-transform duration-300 p-6 mb-6 bg-gradient-to-br from-softRose/5 to-dustyRose/5">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 shrink-0 bg-white rounded-full flex items-center justify-center shadow-md">
                     <span className="text-2xl">🎉</span>
@@ -143,14 +143,14 @@ export default function HomePage() {
               </div>
 
               {/* RSVP Button */}
-              <div className="pt-6">
+              <div className="pt-8 mt-8">
                 <Link href="/rsvp/step1" className="block">
-                  <button className="elegant-button text-lg px-8 py-5 font-elegant w-full text-center shadow-lg hover:shadow-xl">
+                  <button className="elegant-button text-base px-6 py-4 font-elegant w-full text-center shadow-lg hover:shadow-xl">
                     RSVP Now - Save My Spot! 🎊
                   </button>
                 </Link>
-                <p className="text-center text-textSecondary mt-4 text-base">
-                  Please RSVP by <span className="font-bold text-softRose text-lg">February 13, 2026</span>
+                <p className="text-center text-textSecondary mt-4 text-sm">
+                  Please RSVP by <span className="font-bold text-softRose">February 13, 2026</span>
                 </p>
               </div>
 
@@ -159,7 +159,7 @@ export default function HomePage() {
         </div>
 
         {/* Footer */}
-        <footer className="text-center pt-12 border-t border-softRose/20 fade-in">
+        <footer className="text-center pt-16 mt-16 border-t border-softRose/20 fade-in">
           <p className="text-textSecondary mb-3 text-lg">
             Questions? Contact us at{' '}
             <a href="mailto:party@ivysweet16.com" className="text-softRose hover:text-dustyRose font-semibold underline text-xl">
