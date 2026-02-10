@@ -23,8 +23,8 @@ export default function RSVPStep3() {
   }, []);
 
   return (
-    <div className="min-h-screen poster-bg flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-3xl">
+    <div className="min-h-screen poster-bg flex items-center justify-center p-6 sm:p-8 lg:p-12">
+      <div className="w-full max-w-2xl">
 
         {/* Progress Bar */}
         <div className="mb-8">
@@ -37,7 +37,7 @@ export default function RSVPStep3() {
         </div>
 
         {/* Main Card */}
-        <div className="elegant-card soft-shadow p-8 sm:p-12 fade-in-up">
+        <div className="elegant-card soft-shadow p-10 sm:p-12 lg:p-14 fade-in-up">
 
           {/* Header */}
           <div className="text-center mb-10">

@@ -38,12 +38,12 @@ export default function HomePage() {
         <div className="elegant-divider my-16"></div>
 
         {/* Main Content: Poster LEFT, Details RIGHT with better spacing */}
-        <div className="max-w-7xl mx-auto mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="max-w-6xl mx-auto mb-20 px-4">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center justify-center">
 
             {/* LEFT: Poster */}
-            <div className="fade-in order-2 lg:order-1 mb-12 lg:mb-0">
-              <div className="elegant-card p-8 soft-shadow sticky top-8">
+            <div className="fade-in order-2 lg:order-1 mb-12 lg:mb-0 flex justify-center">
+              <div className="elegant-card p-10 soft-shadow w-full max-w-md">
                 <div className="relative aspect-[2/3] rounded-2xl overflow-hidden shadow-inner">
                   <Image
                     src="/poster.png"
