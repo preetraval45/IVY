@@ -106,7 +106,7 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    <p className="text-xs text-textMuted italic">Wear what makes you feel beautiful ✨</p>
+                    <p className="text-xs text-textMuted">any other pastel/floral dress</p>
                   </div>
                 </div>
               </div>
@@ -130,8 +130,8 @@ export default function HomePage() {
                         <span className="font-medium">Dancing</span>
                       </div>
                       <div className="flex items-center gap-3 text-textSecondary text-sm">
-                        <span className="text-xl">📸</span>
-                        <span className="font-medium">Photo Booth</span>
+                        <span className="text-xl">🎨</span>
+                        <span className="font-medium">Painting</span>
                       </div>
                       <div className="flex items-center gap-3 text-textSecondary text-sm">
                         <span className="text-xl">🎊</span>
