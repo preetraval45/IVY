@@ -20,10 +20,6 @@ const RSVPSchema = z.object({
     .max(20, 'Phone number too long')
     .optional()
     .or(z.literal('')),
-  dietary_restrictions: z.string()
-    .max(500, 'Dietary restrictions text too long')
-    .optional()
-    .or(z.literal('')),
   message: z.string()
     .max(1000, 'Message too long')
     .optional()
@@ -58,7 +54,6 @@ export async function POST(request: NextRequest) {
       number_of_guests: validatedData.number_of_guests,
       email: validatedData.email || undefined,
       phone: validatedData.phone || undefined,
-      dietary_restrictions: validatedData.dietary_restrictions || undefined,
       message: validatedData.message || undefined,
     };
 

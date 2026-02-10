@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS rsvps (
     number_of_guests INTEGER NOT NULL CHECK (number_of_guests > 0 AND number_of_guests <= 10),
     email VARCHAR(255),
     phone VARCHAR(50),
-    dietary_restrictions TEXT,
     message TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
@@ -56,7 +55,6 @@ CREATE OR REPLACE VIEW rsvp_summary AS
 SELECT
     COUNT(*) as total_rsvps,
     SUM(number_of_guests) as total_guests,
-    COUNT(CASE WHEN dietary_restrictions IS NOT NULL AND dietary_restrictions != '' THEN 1 END) as guests_with_dietary_needs,
     COUNT(CASE WHEN email IS NOT NULL THEN 1 END) as guests_with_email,
     COUNT(CASE WHEN phone IS NOT NULL THEN 1 END) as guests_with_phone
 FROM rsvps;

@@ -26,12 +26,11 @@ export const db = {
     number_of_guests: number;
     email?: string;
     phone?: string;
-    dietary_restrictions?: string;
     message?: string;
   }) {
     const query = `
-      INSERT INTO rsvps (guest_name, number_of_guests, email, phone, dietary_restrictions, message)
-      VALUES ($1, $2, $3, $4, $5, $6)
+      INSERT INTO rsvps (guest_name, number_of_guests, email, phone, message)
+      VALUES ($1, $2, $3, $4, $5)
       RETURNING id, guest_name, number_of_guests, created_at
     `;
     const values = [
@@ -39,7 +38,6 @@ export const db = {
       data.number_of_guests,
       data.email || null,
       data.phone || null,
-      data.dietary_restrictions || null,
       data.message || null,
     ];
 
@@ -60,7 +58,7 @@ export const db = {
   async getAllRSVPs() {
     const query = `
       SELECT id, guest_name, number_of_guests, email, phone,
-             dietary_restrictions, message, created_at, updated_at
+             message, created_at, updated_at
       FROM rsvps
       ORDER BY created_at DESC
     `;
