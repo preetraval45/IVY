@@ -15,7 +15,9 @@
       "Bash(docker ps:*)",
       "Bash(ls:*)",
       "Bash(git add:*)",
-      "Bash(vercel link:*)"
+      "Bash(vercel link:*)",
+      "Bash(vercel:*)",
+      "Bash(node setup-db-simple.js:*)"
     ]
   }
 }

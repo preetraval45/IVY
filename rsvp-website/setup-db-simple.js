@@ -1,9 +1,15 @@
 // Simple Database Setup - Run with: node setup-db-simple.js
 
+require('dotenv').config({ path: '.env.local' });
 const { neon } = require('@neondatabase/serverless');
 
 async function setup() {
   console.log('🚀 Setting up database...\n');
+
+  if (!process.env.DATABASE_URL) {
+    console.error('❌ DATABASE_URL not found in .env.local');
+    process.exit(1);
+  }
 
   const sql = neon(process.env.DATABASE_URL);
 
