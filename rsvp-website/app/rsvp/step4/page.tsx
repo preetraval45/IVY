@@ -50,73 +50,74 @@ export default function RSVPStep4() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFF5F7] via-[#FFE8EC] to-[#FFD6E0] flex items-center justify-center p-6">
-      {/* Symmetric Background Blobs */}
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 flex items-center justify-center p-4 sm:p-6">
+      {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blush rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-babyPink rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-rose-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="w-full max-w-2xl relative z-10">
-        {/* Progress Bar - Centered */}
-        <div className="mb-12">
+        {/* Progress Bar */}
+        <div className="mb-8 sm:mb-12">
           <div className="flex items-center justify-center mb-3">
-            <span className="text-sm font-semibold text-textDark">Step 4 of 4</span>
+            <span className="text-sm font-bold text-rose-900">Step 4 of 4 - Final Step! 🎉</span>
           </div>
-          <div className="h-3 bg-white/50 rounded-full overflow-hidden shadow-inner max-w-md mx-auto">
-            <div className="h-full w-full bg-gradient-to-r from-blush to-deepPink rounded-full transition-all duration-500 shadow-lg"></div>
+          <div className="h-2 sm:h-3 bg-white/60 rounded-full overflow-hidden shadow-inner max-w-md mx-auto">
+            <div className="h-full w-full bg-gradient-to-r from-pink-500 via-rose-500 to-fuchsia-500 rounded-full transition-all duration-500 shadow-lg animate-pulse"></div>
           </div>
         </div>
 
-        {/* Main Card - Perfectly Centered */}
-        <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-12 border border-white/50">
-          {/* Header - Centered */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center gap-3 mb-6">
-              <span className="text-5xl animate-bounce">🎉</span>
-              <span className="text-4xl animate-bounce" style={{animationDelay: '0.1s'}}>💕</span>
-              <span className="text-5xl animate-bounce" style={{animationDelay: '0.2s'}}>✨</span>
+        {/* Main Card */}
+        <div className="bg-white/95 backdrop-blur-xl rounded-3xl sm:rounded-[2.5rem] shadow-2xl p-8 sm:p-12 border-4 border-pink-200">
+          {/* Header */}
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mb-6">
+              <span className="text-4xl sm:text-5xl animate-bounce">🎉</span>
+              <span className="text-3xl sm:text-4xl animate-bounce" style={{animationDelay: '0.1s'}}>💕</span>
+              <span className="text-4xl sm:text-5xl animate-bounce" style={{animationDelay: '0.2s'}}>✨</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-script text-transparent bg-clip-text bg-gradient-to-r from-blush via-deepPink to-blush mb-4 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-script text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-rose-600 to-pink-600 mb-4 leading-tight">
               Almost Done!
             </h1>
-            <p className="text-lg text-textMedium">
+            <p className="text-base sm:text-lg text-rose-700">
               Leave a sweet message for Ivy 💌
             </p>
           </div>
 
-          {/* Message Field - Centered */}
-          <div className="mb-12 max-w-xl mx-auto">
-            <div className="space-y-3">
-              <label className="block text-center text-sm font-semibold text-textDark uppercase tracking-wide">
-                Special Birthday Message (Optional)
-              </label>
-              <div className="relative">
-                <span className="absolute left-6 top-6 text-3xl">💌</span>
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Leave a sweet birthday message..."
-                  rows={6}
-                  className="w-full pl-16 pr-6 py-6 text-lg rounded-2xl border-2 border-babyPink focus:border-deepPink bg-white/50 focus:bg-white outline-none transition-all duration-300 resize-none shadow-lg focus:shadow-xl"
-                />
-              </div>
+          {/* Message Field */}
+          <div className="mb-10 sm:mb-12 max-w-xl mx-auto">
+            <label className="block text-center text-sm font-bold text-rose-900 mb-4 uppercase tracking-wide">
+              Special Birthday Message (Optional)
+            </label>
+            <div className="relative">
+              <span className="absolute left-4 sm:left-6 top-6 text-2xl sm:text-3xl">💌</span>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Leave a sweet birthday message for Ivy..."
+                rows={6}
+                className="w-full pl-14 sm:pl-16 pr-4 sm:pr-6 py-5 sm:py-6 text-base sm:text-lg rounded-2xl sm:rounded-3xl border-3 border-pink-300 focus:border-rose-500 bg-white focus:bg-pink-50/30 outline-none transition-all duration-300 resize-none shadow-lg focus:shadow-2xl"
+              />
             </div>
+            <p className="mt-3 text-xs sm:text-sm text-center text-rose-600 font-medium">
+              💡 Share your best wishes, memories, or excitement for the celebration!
+            </p>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="mb-8 p-4 bg-red-50 border-2 border-red-200 rounded-2xl animate-shake max-w-xl mx-auto">
-              <p className="text-red-600 text-center font-medium">{error}</p>
+            <div className="mb-8 p-4 sm:p-5 bg-red-50 border-3 border-red-300 rounded-2xl sm:rounded-3xl animate-shake max-w-xl mx-auto shadow-lg">
+              <p className="text-red-700 text-center font-bold text-sm sm:text-base">{error}</p>
             </div>
           )}
 
-          {/* Buttons - Symmetric Layout */}
-          <div className="flex items-center justify-center gap-6">
-            <Link href="/rsvp/step3" className="w-48">
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <Link href="/rsvp/step3" className="w-full sm:w-auto">
               <button
                 disabled={isSubmitting}
-                className="w-full px-8 py-5 text-textDark font-semibold rounded-2xl border-2 border-dustyRose/50 hover:border-dustyRose bg-white hover:bg-dustyRose/10 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-48 px-8 py-4 sm:py-5 text-rose-900 font-bold text-lg rounded-2xl sm:rounded-3xl border-3 border-pink-300 hover:border-rose-400 bg-white hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 ← Back
               </button>
@@ -125,14 +126,14 @@ export default function RSVPStep4() {
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className={`w-48 px-8 py-5 font-bold rounded-2xl text-lg transition-all duration-300 transform
+              className={`w-full sm:w-64 px-8 py-4 sm:py-5 font-black text-lg sm:text-xl rounded-2xl sm:rounded-3xl transition-all duration-300 transform shadow-2xl
                 ${isSubmitting
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-blush via-deepPink to-blush text-white shadow-2xl hover:shadow-3xl hover:scale-105 hover:-translate-y-1'
+                  ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-pink-600 via-rose-600 to-fuchsia-600 text-white hover:shadow-3xl hover:scale-105 hover:-translate-y-1'
                 }`}
             >
               {isSubmitting ? (
-                <span className="flex items-center justify-center gap-2">
+                <span className="flex items-center justify-center gap-3">
                   <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
@@ -140,15 +141,18 @@ export default function RSVPStep4() {
                   Submitting...
                 </span>
               ) : (
-                'Submit RSVP 🎊'
+                <span className="flex items-center justify-center gap-2">
+                  Submit RSVP
+                  <span className="text-2xl">🎊</span>
+                </span>
               )}
             </button>
           </div>
         </div>
 
-        {/* Footer Note - Centered */}
-        <p className="text-center text-sm text-textMedium mt-8">
-          This message is optional - click Submit to finish! ✨
+        {/* Footer Note */}
+        <p className="text-center text-sm text-rose-700 mt-6 sm:mt-8 px-4 font-medium">
+          ✨ You're one click away from joining the celebration!
         </p>
       </div>
 
