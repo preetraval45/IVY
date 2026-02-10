@@ -15,7 +15,6 @@ interface RSVP {
 interface Summary {
   total_rsvps: number;
   total_guests: number;
-  with_dietary_restrictions: number;
   with_messages: number;
 }
 
@@ -209,22 +208,18 @@ export default function AdminPage() {
 
         {/* Summary Cards */}
         {summary && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="bg-gradient-to-br from-pink-500 via-rose-500 to-fuchsia-500 rounded-3xl shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300">
-              <p className="text-white/90 text-sm font-semibold mb-2 uppercase tracking-wide">Total RSVPs</p>
-              <p className="font-black text-6xl text-white drop-shadow-lg">{summary.total_rsvps}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto">
+            <div className="bg-gradient-to-br from-pink-500 via-rose-500 to-fuchsia-500 rounded-3xl shadow-2xl p-10 text-center transform hover:scale-105 transition-all duration-300">
+              <p className="text-white/90 text-sm font-semibold mb-3 uppercase tracking-wide">Total RSVPs</p>
+              <p className="font-black text-7xl text-white drop-shadow-lg">{summary.total_rsvps}</p>
             </div>
-            <div className="bg-gradient-to-br from-rose-500 via-pink-500 to-fuchsia-500 rounded-3xl shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300">
-              <p className="text-white/90 text-sm font-semibold mb-2 uppercase tracking-wide">Total Guests</p>
-              <p className="font-black text-6xl text-white drop-shadow-lg">{summary.total_guests}</p>
+            <div className="bg-gradient-to-br from-rose-500 via-pink-500 to-fuchsia-500 rounded-3xl shadow-2xl p-10 text-center transform hover:scale-105 transition-all duration-300">
+              <p className="text-white/90 text-sm font-semibold mb-3 uppercase tracking-wide">Total Guests</p>
+              <p className="font-black text-7xl text-white drop-shadow-lg">{summary.total_guests}</p>
             </div>
-            <div className="bg-gradient-to-br from-fuchsia-500 via-rose-500 to-pink-500 rounded-3xl shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300">
-              <p className="text-white/90 text-sm font-semibold mb-2 uppercase tracking-wide">Dietary Notes</p>
-              <p className="font-black text-6xl text-white drop-shadow-lg">{summary.with_dietary_restrictions}</p>
-            </div>
-            <div className="bg-gradient-to-br from-pink-600 via-fuchsia-500 to-rose-600 rounded-3xl shadow-2xl p-8 text-center transform hover:scale-105 transition-all duration-300">
-              <p className="text-white/90 text-sm font-semibold mb-2 uppercase tracking-wide">With Messages</p>
-              <p className="font-black text-6xl text-white drop-shadow-lg">{summary.with_messages}</p>
+            <div className="bg-gradient-to-br from-fuchsia-500 via-rose-500 to-pink-500 rounded-3xl shadow-2xl p-10 text-center transform hover:scale-105 transition-all duration-300">
+              <p className="text-white/90 text-sm font-semibold mb-3 uppercase tracking-wide">With Messages</p>
+              <p className="font-black text-7xl text-white drop-shadow-lg">{summary.with_messages}</p>
             </div>
           </div>
         )}

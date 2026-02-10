@@ -58,7 +58,6 @@ export async function GET(request: NextRequest) {
     const summary = summaryResult.success ? summaryResult.data : {
       total_rsvps: 0,
       total_guests: 0,
-      with_dietary_restrictions: 0,
       with_messages: 0,
     };
 

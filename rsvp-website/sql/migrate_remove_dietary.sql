@@ -12,6 +12,5 @@ CREATE OR REPLACE VIEW rsvp_summary AS
 SELECT
     COUNT(*) as total_rsvps,
     SUM(number_of_guests) as total_guests,
-    0 as with_dietary_restrictions,
     COUNT(CASE WHEN message IS NOT NULL AND message != '' THEN 1 END) as with_messages
 FROM rsvps;
